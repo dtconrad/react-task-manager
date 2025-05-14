@@ -1,0 +1,32 @@
+import React from "react";
+import useTasksState from "../hooks/useTasksState";
+import useUIState from "../hooks/useUIState";
+import AddTask from "../components/AddTask";
+import TaskList from "../components/TaskList";
+
+const Home = () => {
+  const { tasks, addTask, deleteTask, toggleTaskComplete, setFilter, filteredTasks } = useTasksState();
+  const { ui, toggleTheme } = useUIState();
+
+  return (
+    <div>
+      <h1>Task Manager</h1>
+      <button onClick={toggleTheme}>
+        Toggle Theme (Current: {ui.theme})
+      </button>
+      <div>
+        <button onClick={() => setFilter("all")}>All</button>
+        <button onClick={() => setFilter("completed")}>Completed</button>
+        <button onClick={() => setFilter("incomplete")}>Incomplete</button>
+      </div>
+      <AddTask onAdd={addTask} />
+      <TaskList
+        tasks={filteredTasks}
+        onDelete={deleteTask}
+        onToggleComplete={toggleTaskComplete}
+      />
+    </div>
+  );
+};
+
+export default Home;
