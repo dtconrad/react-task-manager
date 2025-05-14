@@ -1,0 +1,79 @@
+App.js:
+
+Responsibilities:
+Sets up routing using react-router-dom.
+Manages navigation between pages.
+Acts as the root container for the app.
+Data/Logic:
+Passes routes (Home, About, Contact) to Header.
+
+Home.js:
+
+Responsibilities:
+Manages the state for tasks and filters.
+Handles logic for adding, deleting, toggling completion, and filtering tasks.
+Passes filtered tasks and functions to TaskList and AddTask.
+Data/Logic:
+State for tasks (tasks) and filters (filter).
+Functions for updating tasks (addTask, deleteTask, toggleTaskComplete).
+Filtering logic to determine which tasks to display.
+
+Contact.js:
+
+Responsibilities:
+Manages the state for the contact form.
+Handles form submission and input changes.
+Passes state and logic to contact form fields.
+Data/Logic:
+State for the contact form (firstName, lastName, email, comments).
+Handles input changes (handleChange) and form submission (handleSubmit).
+
+About.js:
+
+Responsibilities:
+Displays static content about the app.
+Acts as a container for static text or future dynamic data.
+
+Header.js:
+
+Responsibilities:
+Displays the navigation bar.
+Provides links to different pages (Home, About, Contact).
+Props:
+None (static links).
+
+TaskList.js:
+
+Responsibilities:
+Displays a list of tasks.
+Passes individual task data to TaskItem.
+Props:
+tasks: Array of task objects.
+onDelete: Function to delete a task.
+onToggleComplete: Function to toggle task completion.
+
+TaskItem.js:
+
+Responsibilities:
+Displays individual task details.
+Handles task completion (strikethrough effect) and delete button.
+Props:
+task: Task object (id, text, completed).
+onDelete: Function to delete the task.
+onToggleComplete: Function to toggle task completion.
+
+AddTask.js:
+
+Responsibilities:
+Displays a form for adding new tasks.
+Handles user input and form submission.
+Props:
+onAdd: Function to add a new task.
+Contact Form Fields (within Contact.js):
+
+Responsibilities:
+Render individual form fields (firstName, lastName, email, comments).
+Update state when user types into the fields.
+Props:
+value: Current value of the field.
+onChange: Function to handle input changes.
